@@ -1,0 +1,13 @@
+function makeImageNames
+
+root = [pwd,'\'];
+ftype = '.mat'
+fn = dir([root,'*',ftype]);
+nImages = size(fn,1)
+
+allimagenames = []
+for i = 1:nImages
+    iname = fn(i).name
+    allimagenames = [allimagenames,{fn(i).name}];
+end
+save allimagenames;

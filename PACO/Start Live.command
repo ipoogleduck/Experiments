@@ -1,0 +1,1 @@
+open -W -n -a PsychoPy3.app --args -x /Volumes/bamlab/Experiments/PACO/live/liveUpdate.py

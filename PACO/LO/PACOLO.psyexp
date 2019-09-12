@@ -1,0 +1,1688 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="3.1.5">
+  <Settings>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data/Logs/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="False" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant': ''}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="JS libs" updates="None" val="packaged" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="height" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[2560, 1440]" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[-1.000,-1.000,-1.000]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="PACOLO" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="test">
+      <MouseComponent name="mouse1">
+        <Param name="clickable" updates="constant" val="" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutineOnPress" updates="constant" val="never" valType="str"/>
+        <Param name="name" updates="None" val="mouse1" valType="code"/>
+        <Param name="newClicksOnly" updates="constant" val="False" valType="bool"/>
+        <Param name="saveMouseState" updates="None" val="never" valType="str"/>
+        <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
+      </MouseComponent>
+      <KeyboardComponent name="key_resp_2">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_2" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="DragCode">
+        <Param name="Begin Experiment" updates="constant" val="#To prevent user from clicking inside the color wheel and selecting a color, noClickShape surrounds entire image, set opacity to one to see for yourself ;)&amp;#10;noClickShape = visual.RadialStim(win, colorSpace = 'hsv', color=[180,0,1], pos=(0,0), size=(0.25,0.25), angularCycles = 0, radialCycles = 0, radialPhase = 0.5, opacity = 0)" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="isDragging = False #Lets other parts of experiment know that the user is dragging the stimuli&amp;#10;didFinishDrag = False #Lets some aspects of the experiment only do something once after a drag has finished&amp;#10;hasDragged = False #For preventing the user from going on until dragged&amp;#10;place = (0,0) #Place of object (Image)&amp;#10;Image.setPos(place) #Sets image to (0,0)&amp;#10;noClickShape.setPos(place) #Sets noClickShape to (0,0), see Begin Experiment for more about noClickShape&amp;#10;mousePlace = (0,0) #Place of mouse when clicked&amp;#10;mousex = 0.0 #Offset of mouse x&amp;#10;mousey = 0.0 #Offset of mouse y&amp;#10;firstDrag = True #For updating positions of mousex and mousey" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="#This whole complicated thing makes sure that the stimuli always stays on the mouse if they click on the stimuli first&amp;#10;if mouse1.isPressedIn(screenRect) and didFinishDrag == False:#ScreenRect is used to detect if mouse is pressed anywhere on screen&amp;#10;    if mouse1.isPressedIn(noClickShape): #Checks when mouse is pressed down, see Begin Experiment for more about noClickShape&amp;#10;        #This calculates offset of mouse from center of object (Not needed but looks better in experiment)&amp;#10;        mousePlace = mouse1.getPos()&amp;#10;        if firstDrag == True: #Only updates offset once when starting the drag&amp;#10;            mousex = mousePlace[0] - place[0] #Gets the difference between the Image place and the mouse place for x&amp;#10;            mousey = mousePlace[1] - place[1] #Gets the difference between the Image place and the mouse place for y&amp;#10;            firstDrag = False #Disables first drag&amp;#10;        place = mousePlace[0] - mousex, mousePlace[1] - mousey #Adds this onto the place of the image for more intuitive dragging&amp;#10;        Image.setPos(place) #Sets position of the image equal to the position of the mouse&amp;#10;        noClickShape.setPos(place) #Set position&amp;#10;        isDragging = True #Sets is dragging to true when the mouse starts on the object (noClickShape in this case)&amp;#10;        hasDragged = True #For preventing the user from going on until dragged&amp;#10;        win.mouseVisible = False #Hide mouse when dragging&amp;#10;    elif isDragging == True: #If the mouse started on noClickShape but isnt there right now (and still pressed down) it will update position anyway&amp;#10;        #This calculates offset of mouse from center of object (Not needed but looks better in experiment)&amp;#10;        mousePlace = mouse1.getPos()&amp;#10;        if firstDrag == True: #Only updates offset once when starting the drag&amp;#10;                mousex = mousePlace[0] - place[0] #Gets the difference between the Image place and the mouse place for x&amp;#10;                mousey = mousePlace[1] - place[1] #Gets the difference between the Image place and the mouse place for y&amp;#10;                firstDrag = False #Disables first drag&amp;#10;        place = mousePlace[0] - mousex, mousePlace[1] - mousey #Adds this onto the place of the image for more intuitive dragging&amp;#10;        Image.setPos(place) #Sets position of the image equal to the position of the mouse&amp;#10;        noClickShape.setPos(place) #Set position&amp;#10;elif didFinishDrag == True and isDragging == True: #Disables didFinishDrag for good&amp;#10;    didFinishDrag = False&amp;#10;elif isDragging == True: #This is an elif statement so will only play if others above are false&amp;#10;    didFinishDrag = True #Makes var true so it only is true for one frame&amp;#10;    isDragging = False #It is no longer dragging&amp;#10;    win.mouseVisible = True #Show mouse once your done dragging&amp;#10;    firstDrag = True #re-enables first drag again so when the first if statement plays it will update position of offset&amp;#10;else:&amp;#10;    didFinishDrag = False #Disables didFinishDrag for good&amp;#10;&amp;#10;noClickShape.draw() #Draws no click shape" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="DragCode" valType="code"/>
+      </CodeComponent>
+      <PolygonComponent name="screenRect">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="fillColor" updates="constant" val="$[-0.851,1.000,-1.000]" valType="str"/>
+        <Param name="fillColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="lineColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="lineColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="lineWidth" updates="constant" val="1" valType="code"/>
+        <Param name="nVertices" updates="constant" val="4" valType="int"/>
+        <Param name="name" updates="None" val="screenRect" valType="code"/>
+        <Param name="opacity" updates="constant" val="0" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="shape" updates="constant" val="rectangle" valType="str"/>
+        <Param name="size" updates="constant" val="(2, 2)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </PolygonComponent>
+      <CodeComponent name="SaveCode">
+        <Param name="Begin Experiment" updates="constant" val="import datetime #For saving raction times&amp;#10;&amp;#10;currentTest = 0&amp;#10;testrad = 0 #Requires it to be defined at the beginning for some reason&amp;#10;&amp;#10;testOnset = -1" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="then = datetime.datetime.now() #Saves time they begun the section&amp;#10;nowtime = datetime.datetime.now().time() #Saves time they begun the section&amp;#10;&amp;#10;degrees = 0 #Resests degrees so that if it saves with an exit the degrees will be 0 and not some random number&amp;#10;Image.setColor([0,0,1])#sets Image hsv color&amp;#10;&amp;#10;&amp;#10;&amp;#10;#Live stuff reset to N/A in case there is no correct location/color&amp;#10;livetestx = 'N/A'&amp;#10;livetesty = 'N/A'&amp;#10;livetestrad = 'N/A'&amp;#10;&amp;#10;testPath = 'N/A'&amp;#10;testx = &quot;N/A&quot;&amp;#10;testy = &quot;N/A&quot;&amp;#10;testrad = 0&amp;#10;testPath = stimuli[0][test_order[currentTest]] #Gets path of the study image&amp;#10;testoldornew = stimuli[4][test_order[currentTest]] #Gets color of the study image&amp;#10;livetestPath = testPath #For live file&amp;#10;livetestoldornew = testoldornew #For live file&amp;#10;if testoldornew == &quot;Old&quot;:&amp;#10;    testx = stimuli[1][test_order[currentTest]] #Gets x cord of the study image&amp;#10;    testy = stimuli[2][test_order[currentTest]] #Gets y cord of the study image&amp;#10;    testrad = stimuli[3][test_order[currentTest]] #Gets color of the study image&amp;#10;    livetestx = str(testx) #For live file&amp;#10;    livetesty = str(testy) #For live file&amp;#10;    livetestrad = str(testrad) #For live file" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="#NOTE: Some save code is in oldornew section of the experiment&amp;#10;&amp;#10;#Saves Stimuli name&amp;#10;thisExp2.addData('StimuliName', stimuli[7][test_order[currentTest]])&amp;#10;&amp;#10;#Saves order of test, oldornew, and study, starting with 0&amp;#10;thisExp2.addData('TestOrder', currentTest)&amp;#10;#Very complicated function to find order&amp;#10;testingNum = 0&amp;#10;while oldornew_order[testingNum] != test_order[currentTest]:&amp;#10;    testingNum += 1&amp;#10;thisExp2.addData('OldOrNewOrder', testingNum)&amp;#10;testingNum = 0&amp;#10;while study_order[testingNum] != test_order[currentTest]:&amp;#10;    testingNum += 1&amp;#10;thisExp2.addData('StudyOrder', testingNum)&amp;#10;&amp;#10;#Saves user old or new&amp;#10;thisExp2.addData('User_OldOrNew', stimuli[5][test_order[currentTest]])&amp;#10;&amp;#10;#MARK: User Save&amp;#10;#save position (place var)&amp;#10;x, y = place&amp;#10;#Save user's position of the image&amp;#10;thisExp2.addData('User_Image_x', round(x,5))&amp;#10;thisExp2.addData('User_Image_y', round(y,5))&amp;#10;liveuserx = str(round(x,5)) #For live data&amp;#10;liveusery = str(round(y,5)) #For live data&amp;#10;&amp;#10;#MARK: Correct Save&amp;#10;#Save Correct oldornew&amp;#10;if not skipOldOrNew:&amp;#10;    thisExp2.addData('Correct_OldOrNew', testoldornew)&amp;#10;else:&amp;#10;    thisExp2.addData('Correct_OldOrNew', 'N/A')&amp;#10;&amp;#10;#Save correct position of the image&amp;#10;thisExp2.addData('Correct_Image_x', testx)&amp;#10;thisExp2.addData('Correct_Image_y', testy)&amp;#10;&amp;#10;#MARK: Get distance from correct location/color&amp;#10;#Location&amp;#10;distx = abs(x-testx) #find the distance in x between correct and user&amp;#10;disty = abs(y-testy) #find the distance in y between correct and user&amp;#10;pythDist = math.sqrt((distx*distx)+(disty*disty)) #Uses pythagorean theorem to find distance&amp;#10;pythDist = round(pythDist,5) #Round to prevent errors&amp;#10;thisExp2.addData('locationDist', pythDist) #saves distance&amp;#10;&amp;#10;#MARK: Gets reaction time &amp;#10;thisExp2.addData('OldOrNew_RT', stimuli[6][test_order[currentTest]]) #saves time from oldornew section&amp;#10;now = datetime.datetime.now() #Gets time now&amp;#10;diff = now-then #Gets the difference&amp;#10;testrt = round(diff.total_seconds(),2) #Puts it in testrt and rounds to 2 decimal places&amp;#10;thisExp2.addData('Test_RT', testrt) #adds data&amp;#10;livetestrt = str(testrt) #Live file data&amp;#10;&amp;#10;thisExp2.addData('StudyStartTime', stimuli[8][test_order[currentTest]]) #adds data&amp;#10;thisExp2.addData('OldOrNewStartTime', stimuli[9][test_order[currentTest]]) #adds data&amp;#10;thisExp2.addData('TestStartTime', nowtime) #adds start time of stimulis on screen&amp;#10;&amp;#10;thisExp2.addData('StudyOnset', stimuli[10][test_order[currentTest]]) #adds data&amp;#10;thisExp2.addData('OldOrNewOnset', stimuli[11][test_order[currentTest]]) #adds data&amp;#10;thisExp2.addData('TestOnset', round((then-testOnset).total_seconds(),2)) #adds start time of stimulis on screen&amp;#10;&amp;#10;currentTest += 1 #Goes to next test stimuli&amp;#10;&amp;#10;#Next Entry of experiment&amp;#10;thisExp2.nextEntry()" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="SaveCode" valType="code"/>
+      </CodeComponent>
+      <CodeComponent name="ExitCode">
+        <Param name="Begin Experiment" updates="constant" val="#Max degrees and speed for color help&amp;#10;colorMaxDeg = 270 #1 to any real number, must be at least twice as much as speed for smooth animation&amp;#10;colorSpeed = 50 #1 to any real number, do not recomend setting this above 50&amp;#10;&amp;#10;#Color text setup&amp;#10;ColorText = visual.TextStim(win=win, name='ColorText',&amp;#10;    text='Please select a color from the color wheel',&amp;#10;    font='Arial',&amp;#10;    pos=(0, -0.4), height=0.03, wrapWidth=None, ori=0, &amp;#10;    color='white', colorSpace='rgb', opacity=1, &amp;#10;    languageStyle='LTR',&amp;#10;    depth=0.0);&amp;#10;&amp;#10;#Drag text setup&amp;#10;DragText = visual.TextStim(win=win, name='DragText',&amp;#10;    text='Please Drag and Drop the object to a location on the screen',&amp;#10;    font='Arial',&amp;#10;    pos=(0, -0.4), height=0.03, wrapWidth=None, ori=0, &amp;#10;    color='white', colorSpace='rgb', opacity=1, &amp;#10;    languageStyle='LTR',&amp;#10;    depth=0.0);&amp;#10;&amp;#10;#Define images&amp;#10;arrowUp = visual.ImageStim(&amp;#10;    win=win, name='arrowUp',&amp;#10;    image='sin', mask=None,&amp;#10;    ori=0, pos=(0, .15), size=(0.03, 0.03),&amp;#10;    color=[1,0,1], colorSpace='hsv', opacity=1,&amp;#10;    flipHoriz=False, flipVert=False,&amp;#10;    texRes=128, interpolate=True, depth=0.0)&amp;#10;&amp;#10;arrowDown = visual.ImageStim(&amp;#10;    win=win, name='arrowDown',&amp;#10;    image='sin', mask=None,&amp;#10;    ori=0, pos=(0, -.15), size=(0.03, 0.03),&amp;#10;    color=[1,0,1], colorSpace='hsv', opacity=1,&amp;#10;    flipHoriz=False, flipVert=True,&amp;#10;    texRes=128, interpolate=True, depth=0.0)&amp;#10;&amp;#10;arrowRight = visual.ImageStim(&amp;#10;    win=win, name='arrowRight',&amp;#10;    image='sin', mask=None,&amp;#10;    ori=0, pos=(.15, 0), size=(0.03, 0.03),&amp;#10;    color=[1,0,1], colorSpace='hsv', opacity=1,&amp;#10;    flipHoriz=False, flipVert=False,&amp;#10;    texRes=128, interpolate=True, depth=0.0)&amp;#10;&amp;#10;arrowLeft = visual.ImageStim(&amp;#10;    win=win, name='arrowLeft',&amp;#10;    image='sin', mask=None,&amp;#10;    ori=0, pos=(-.15, 0), size=(0.03, 0.03),&amp;#10;    color=[1,0,1], colorSpace='hsv', opacity=1,&amp;#10;    flipHoriz=True, flipVert=False,&amp;#10;    texRes=128, interpolate=True, depth=0.0)&amp;#10;&amp;#10;#Set images&amp;#10;arrowUp.setImage(thisdir + '/LO/arrowUp.png')&amp;#10;arrowDown.setImage(thisdir + '/LO/arrowUp.png')&amp;#10;arrowRight.setImage(thisdir + '/LO/arrowRight.png')&amp;#10;arrowLeft.setImage(thisdir + '/LO/arrowRight.png')&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="mouse1.setPos(newPos=(0, 0.005)) #resets position of mouse, has to be offset slightly or else it will select a color for some reason&amp;#10;win.mouseVisible = True #Show mouse only if it is supposed to continue routine&amp;#10;&amp;#10;#These two vars give the person help with knowing how to drag/color live&amp;#10;helpDrag = False&amp;#10;&amp;#10;opacOfArrows = 0.0 #Opacity of the arrows&amp;#10;opacUp = True #If Opacity is rising or falling&amp;#10;&amp;#10;colorDeg = 0 #Degrees of slider for colorHelp&amp;#10;colorDegUp = True #Degrees of the slider going up or down&amp;#10;colorOpac = 0 #Opacity of the slider" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if theseKeys == 'space':  #if space is pressed&amp;#10;    #a response ends the routine&amp;#10;    helpDrag = True #If they have not dragged yet and try to end routine&amp;#10;    if hasDragged: #Stops routine if they have colored and moved the stimuli&amp;#10;        continueRoutine = False&amp;#10;&amp;#10;#Help animations&amp;#10;if helpDrag == True and hasDragged == False:&amp;#10;    #Makes a nice animation&amp;#10;    if opacOfArrows &gt;= 1.0: #changes direction of opacity&amp;#10;        opacUp = False&amp;#10;    elif opacOfArrows &lt;= 0.0:&amp;#10;        opacUp = True&amp;#10;    if opacUp == True:&amp;#10;        opacOfArrows += 0.01 #Changes opacity, change this var to make animation faster or slower&amp;#10;    else:&amp;#10;        opacOfArrows -= 0.01&amp;#10;    #Draws aroows and text&amp;#10;    arrowUp.opacity = opacOfArrows&amp;#10;    arrowDown.opacity = opacOfArrows&amp;#10;    arrowRight.opacity = opacOfArrows&amp;#10;    arrowLeft.opacity = opacOfArrows&amp;#10;    arrowUp.draw()&amp;#10;    arrowDown.draw()&amp;#10;    arrowRight.draw()&amp;#10;    arrowLeft.draw()&amp;#10;    DragText.draw() #Tells user what to do" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="win.mouseVisible = False #Hide mouse" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="ExitCode" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="Image">
+        <Param name="color" updates="constant" val="$[1,-1.000,1.000]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="hsv" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$testPath" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="Image" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <CodeComponent name="liveCode15">
+        <Param name="Begin Experiment" updates="constant" val="#Each variable for the live is separate from the actual data saving variables and they are all in string form&amp;#10;&amp;#10;livetestPath = 'N/A'&amp;#10;livetestoldornew = 'N/A'&amp;#10;livetestx = 'N/A'&amp;#10;livetesty = 'N/A'&amp;#10;livetestrad = 'N/A'&amp;#10;&amp;#10;liveuseroldornew = 'N/A'&amp;#10;liveuserx = 'N/A'&amp;#10;liveusery = 'N/A'&amp;#10;liveuserrad = 'N/A'&amp;#10;&amp;#10;liveoldornewrt = 'N/A'&amp;#10;livetestrt = 'N/A'" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Test,Stimuli,' + str(currentTest+1) + ',' + str(num_study) + ',' + str(currentTest+2) + ',' + str(num_study+1) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + ',' + stimuli[7][test_order[currentTest]] + ',' + livetestx + ',' + livetesty + ',' + livetestrad + ',' + stimuli[5][test_order[currentTest]] + ',' + liveuserx + ',' + liveusery + ',' + liveuserrad + ',' + str(stimuli[6][test_order[currentTest]]) + ',' + livetestrt)&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode15" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="header">
+      <CodeComponent name="saveCode">
+        <Param name="Begin Experiment" updates="constant" val="import random, xlrd, math #For randomization of stimuli&amp;#10;command = False #For exiting experiment&amp;#10;&amp;#10;thisdir = os.path.abspath(os.path.join(os.path.dirname(_thisDir),'.'))&amp;#10;&amp;#10;#randomize the seed&amp;#10;random.seed(int(expInfo['participant'])) #Put in subject number&amp;#10;&amp;#10;#Version Number (Update this when you make changes to the experiment, it will go in the readme file in each participant's folder, see bottom of begin experiment tab)&amp;#10;versionNumber = '0.1.6'&amp;#10;&amp;#10;#number of study items&amp;#10;num_study = 50 #50&amp;#10;&amp;#10;#number of OLD OR NEW items they'll be tested on&amp;#10;num_test = 75 #75&amp;#10;&amp;#10;#Skip the Old Or New Section&amp;#10;skipOldOrNew = False&amp;#10;&amp;#10;#Skip Practice Section&amp;#10;skipPractice = False&amp;#10;&amp;#10;#number of total items (stimuli)&amp;#10;num_items = 243&amp;#10;&amp;#10;&amp;#10;&amp;#10;if skipOldOrNew:&amp;#10;    num_oldornew = 0&amp;#10;    num_practoldornew = 0&amp;#10;    numberofpractice = 0&amp;#10;else:&amp;#10;    num_oldornew = num_test&amp;#10;    num_practoldornew = 4&amp;#10;    numberofpractice = 5&amp;#10;if skipPractice:&amp;#10;    num_practstudy = 0&amp;#10;    num_practoldornew = 0&amp;#10;    numberofpractice = 0&amp;#10;else:&amp;#10;    num_practstudy = 2&amp;#10;&amp;#10;#MARK: Generate coordinates&amp;#10;#This will create the x and y coordiantes for use, change num_study variable and this will adapt by itself&amp;#10;#Maximum coordinates (Right Top of screen) (You probably don't want this to go all the way to the end of the screen)&amp;#10;screenx = 0.78 #Maximum x point on Psychopy screen you want the stimuli to go to&amp;#10;screeny = 0.39 #Maximum y point on Psychopy screen you want the stimuli to go to&amp;#10;&amp;#10;#screen is approx 2 by 1, so below numbers should reflect that&amp;#10;divx = 4 #How many points there can be accross the x axis minimum&amp;#10;divy = 2 #How many points there can be accross the y axis minimum&amp;#10;&amp;#10;numberofcords = 0 #Number of actual cords when excluding center ones&amp;#10;&amp;#10;while numberofcords &lt; num_study:&amp;#10;  if divy*2 == divx or divy*2 == divx+1:&amp;#10;    divx += 1&amp;#10;  else:&amp;#10;    divy += 1&amp;#10;  howmanyall = divx*divy #How many &amp;#10;  numberofcords = 0&amp;#10;  xcords = [] #array of cords for x&amp;#10;  ycords = [] #array of cords for y&amp;#10;  ix = 0&amp;#10;  while ix &lt;= divx:&amp;#10;    if ix == 0:&amp;#10;      xmult = 0&amp;#10;    else:&amp;#10;      xmult = ix/divx&amp;#10;    iy = 0&amp;#10;    while iy &lt;= divy:&amp;#10;      if iy == 0:&amp;#10;        ymult = 0&amp;#10;      else:&amp;#10;        ymult = iy/divy&amp;#10;      #print(&quot; &quot;)&amp;#10;      #print(xmult, ymult) #For debugging&amp;#10;      xcord = ((screenx*2)*xmult)-screenx&amp;#10;      ycord = ((screeny*2)*ymult)-screeny&amp;#10;      if not xcord &lt; 0.15 or not xcord &gt; -0.15 or not ycord &lt; 0.15 or not ycord &gt; -0.15: #Exclusion points, change these to choose which points are excluded bc they are too close to the center&amp;#10;        #print(&quot;Cordinates:&quot;)&amp;#10;        numberofcords += 1&amp;#10;        #print(xcord) #Uncomment these to get the raw x and y coordinates on separate lines&amp;#10;        #print(ycord)&amp;#10;        #print(&quot;(&quot; + str(xcord) + &quot;,&quot; + str(ycord) + &quot;)&quot;) #Uncomment to print coordinates as (x,y), you can use this for testing out points on desmos graph?&amp;#10;        xcords.append(round(xcord, 5))&amp;#10;        ycords.append(round(ycord, 5))&amp;#10;      iy += 1&amp;#10;    ix += 1&amp;#10;#You want this to equal as close to the number of possible coordinates you want as possible (In my case I want it to be close to 70)&amp;#10;print(&quot; &quot;)&amp;#10;#print(xcords)&amp;#10;#print(ycords)&amp;#10;print(&quot;Number of Coordinates: &quot; + str(numberofcords)) &amp;#10;print(&quot;There are &quot; + str(divx + 1) + &quot; x coordinates and &quot; + str(divy + 1) + &quot; y coordinates&quot;)&amp;#10;&amp;#10;#MARK: Randomize coordinates&amp;#10;cordNums= [] #These numbers direct the final cords to the correct place in cords&amp;#10;#Final coordinates that are randomized&amp;#10;finalxcords = []&amp;#10;finalycords = []&amp;#10;&amp;#10;for i in range(numberofcords): #Randomizes cordNums to be used as pickers for the final cords, randomizing with numberofcords makes sure any coordinates the above function generates can be used&amp;#10;    cordNums.append(i)&amp;#10;random.shuffle(cordNums) #Randomizes items in cordnums&amp;#10;for i in range(num_study): #Randomizes x and y cords together so they don't get all mixed up&amp;#10;    finalxcords.append(xcords[cordNums[i]])&amp;#10;    finalycords.append(ycords[cordNums[i]])&amp;#10;#print(cordNums)&amp;#10;&amp;#10;#MARK: Generate And Randomize Stimulis Filenames&amp;#10;filenameNums = []&amp;#10;filenames = []&amp;#10;filenameNumbers = []&amp;#10;for i in range(num_items-1): #Randomizes cordNums to be used as pickers for the final cords, randomizing with numberofcords makes sure any coordinates the above function generates can be used&amp;#10;    filenameNums.append(i + 1)&amp;#10;random.shuffle(filenameNums) #Randomizes items in cordnums&amp;#10;for i in range(num_test): #Randomizes x and y cords together so they don't get all mixed up&amp;#10;    filenames.append(thisdir + &quot;/Stimuli/&quot; + str(filenameNums[i]) + &quot;.png&quot;)&amp;#10;    filenameNumbers.append(str(filenameNums[i]))&amp;#10;#print(filenames)&amp;#10;&amp;#10;#MARK: Randomize Rad#s For Color&amp;#10;radColors = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    radColors.append(&quot;N/A&quot;)&amp;#10;&amp;#10;#MARK: Generate Old Or New Status&amp;#10;oldornewStatus = []&amp;#10;for i in range(num_study):&amp;#10;    oldornewStatus.append(&quot;Old&quot;)&amp;#10;for i in range(num_test-num_study):&amp;#10;    oldornewStatus.append(&quot;New&quot;)&amp;#10;#print(oldornewStatus)&amp;#10;&amp;#10;blankArray = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    blankArray.append(&quot;N/A&quot;)&amp;#10;&amp;#10;blankArray2 = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    blankArray2.append(&quot;N/A&quot;)&amp;#10;&amp;#10;blankArray3 = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    blankArray3.append(&quot;N/A&quot;)&amp;#10;&amp;#10;blankArray4 = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    blankArray4.append(&quot;N/A&quot;)&amp;#10;&amp;#10;blankArray5 = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    blankArray5.append(&quot;N/A&quot;)&amp;#10;&amp;#10;blankArray6 = [] #Blank array is so that later it is possible to put new values into the np stimuli array, like the oldornew status and rt&amp;#10;for i in range(num_test):&amp;#10;    blankArray6.append(&quot;N/A&quot;)&amp;#10;&amp;#10;#MARK: Create Stimuli np.Array With All Other Factors&amp;#10;stimuli = np.array([filenames, finalxcords, finalycords, radColors, oldornewStatus, blankArray, blankArray2, filenameNumbers, blankArray3, blankArray4, blankArray5, blankArray6])&amp;#10;print(stimuli)&amp;#10;&amp;#10;#MARK: Randomize Order For Each Task&amp;#10;study_order = []&amp;#10;for i in range(num_study):&amp;#10;    study_order.append(i)&amp;#10;random.shuffle(study_order)&amp;#10;&amp;#10;oldornew_order = []&amp;#10;for i in range(num_test):&amp;#10;    oldornew_order.append(i)&amp;#10;random.shuffle(oldornew_order)&amp;#10;&amp;#10;test_order = []&amp;#10;for i in range(num_study):&amp;#10;    test_order.append(i)&amp;#10;random.shuffle(test_order)" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="win.mouseVisible = False #Hide mouse&amp;#10;&amp;#10;#Save data files in begin routine so that if the participant already exists and the user clicks cancel, it won't save any data&amp;#10;if not skipOldOrNew:&amp;#10;    #Save Old or New data file&amp;#10;    filename4 = _thisDir + os.sep + u'data/%s/sub_%s_%s_OldOrNew' % (expInfo['participant'], expInfo['participant'], expName)&amp;#10;    thisExp4 = data.ExperimentHandler(name=expName, version='',&amp;#10;        extraInfo=expInfo, runtimeInfo=None,&amp;#10;        originPath= thisdir + '/LOCO/PACOLOCO.py',&amp;#10;        savePickle=False, saveWideText=True,&amp;#10;        dataFileName=filename4)&amp;#10;&amp;#10;#Save Normal Data File&amp;#10;filename2 = _thisDir + os.sep + u'data/%s/sub_%s_%s_test' % (expInfo['participant'], expInfo['participant'], expName)&amp;#10;thisExp2 = data.ExperimentHandler(name=expName, version='',&amp;#10;    extraInfo=expInfo, runtimeInfo=None,&amp;#10;    originPath= thisdir + '/LOCO/PACOLOCO.py',&amp;#10;    savePickle=False, saveWideText=True,&amp;#10;    dataFileName=filename2)&amp;#10;&amp;#10;#Save Live Update File&amp;#10;liveFileName = _thisDir + os.sep + u'live/%s/live' % (expInfo['participant'])&amp;#10;liveNum = 1&amp;#10;&amp;#10;#Save Abort Data File, these kind of saves with 'thisExp' in them save no matter what when you quit the program&amp;#10;thisExp3 = data.ExperimentHandler(name=expName, version='',&amp;#10;    extraInfo=expInfo, runtimeInfo=None,&amp;#10;    originPath= thisdir + '/LOCO/PACOLOCO.py',&amp;#10;    savePickle=False, saveWideText=True,&amp;#10;    dataFileName=liveFileName + 'live')&amp;#10;&amp;#10;#Create readme&amp;#10;rmFile = open(_thisDir + os.sep + u'data/%s/README.txt' % (expInfo['participant']), 'w')&amp;#10;rmFile.write('VERSION ' + versionNumber + '\n\nIf this experiment was fully and successfully completed by the participant, you only need you use the test data file, it contains all the data you need.\nIf something went wrong during the experiment, or it was aborted before it was finished, you can use the oldornew data file to recover the user\'s responses for each old or new trail.' + &amp;#10;    '\nThe columns for the test data file are ordered by the order that they are presented at test (Only the old stimuli), and then are ordered by the order they were presented at Old Or New (Only new stimuli).' + &amp;#10;    '\n\nHow to use data in the test file:\nThe stimuli name corresponds to each stimuli in the stimuli folder (located in the main LOCO folder).\nUse the test order, oldorneworder, and study order to sort each data row. To do this, create an empty array and use a for loop to append the lowest to highest number of the order column, starting at 0.' + &amp;#10;    '\nUser vs Correct is self explanatory, with old or new being added as N/A if it was skipped in the header file.\nThe X and Y are coordinates on the screen (0.5 is the highest y value, while 0.9? is the highest x value).' + &amp;#10;    '\nLocation distance is calculated using the pythagorean theorem, where a and b are the x and y coordinates.\nOldOrNew rt and Test rt are reaction times of the user.' + &amp;#10;    '\nStart times are the start times of each trail, with hour, minute, second.\nOnset time counts the amount of seconds when each stimuli was shown since the first reset (Fixation Cross) of that section (for example, the beginning of study) came on the screen\nDate is the date and time that the experiment started, and is not updated every trail.\nPsychopy running version should be at least 3.1.5.\n\nThanks for reading! Have any more questions? Contact me at ipoogleduck@gmail.com')&amp;#10;rmFile.close()" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="thisExp2.saveAsWideText(filename2+'.csv')&amp;#10;thisExp2.abort()  # or data files will save again on exit&amp;#10;&amp;#10;thisExp3.saveAsWideText(liveFileName+'live.csv')&amp;#10;thisExp3.abort()  # or data files will save again on exi" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="saveCode" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="reset">
+      <CodeComponent name="onsetCode">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if studyOnset == 0:&amp;#10;    studyOnset = datetime.datetime.now()&amp;#10;&amp;#10;if oldornewOnset == 0:&amp;#10;    oldornewOnset = datetime.datetime.now()&amp;#10;&amp;#10;if testOnset == 0:&amp;#10;    testOnset = datetime.datetime.now()" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="onsetCode" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="resettext">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.04" valType="code"/>
+        <Param name="name" updates="None" val="resettext" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="liveCode13">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode13" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="oldornew">
+      <TextComponent name="oldornewText">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="oldornewText" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, -.45)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="1 - Old        2 - New" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="oldornewCode">
+        <Param name="Begin Experiment" updates="constant" val="currentOldornew = 0&amp;#10;oldornewrad = 0 #Requires it to be defined at the beginning for some reason&amp;#10;&amp;#10;oldornewOnset = -1" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="win.mouseVisible = False #Hide mouse&amp;#10;then = datetime.datetime.now() #Gets time&amp;#10;nowtime = datetime.datetime.now().time() #Saves time they begun the section&amp;#10;stimuli[9][oldornew_order[currentOldornew]] = nowtime&amp;#10;&amp;#10;#Live stuff reset to N/A in case there is no correct location/color&amp;#10;liveoldornewx = 'N/A'&amp;#10;liveoldornewy = 'N/A'&amp;#10;liveoldornewrad = 'N/A'&amp;#10;&amp;#10;oldornewx = &quot;N/A&quot;&amp;#10;oldornewy = &quot;N/A&quot;&amp;#10;oldornewrad = 0&amp;#10;oldornewPath = stimuli[0][oldornew_order[currentOldornew]] #Gets path of the study image&amp;#10;oldornewoldornew = stimuli[4][oldornew_order[currentOldornew]] #Gets color of the study image&amp;#10;liveoldornewoldornew = oldornewoldornew #For live file&amp;#10;if oldornewoldornew == &quot;Old&quot;:&amp;#10;    oldornewx = stimuli[1][oldornew_order[currentOldornew]] #Gets x cord of the study image&amp;#10;    oldornewy = stimuli[2][oldornew_order[currentOldornew]] #Gets y cord of the study image&amp;#10;    oldornewrad = stimuli[3][oldornew_order[currentOldornew]] #Gets color of the study image&amp;#10;    liveoldornewx = str(oldornewx) #For live file&amp;#10;    liveoldornewy = str(oldornewy) #For live file&amp;#10;    liveoldornewrad = str(oldornewrad) #For live file&amp;#10;&amp;#10;stimuli[11][oldornew_order[currentOldornew]] = round((datetime.datetime.now()-oldornewOnset).total_seconds(),2)" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if '1' in key or '2' in key: #t is a var for time psychopy automatically creates&amp;#10;        if key == '1':&amp;#10;            stimuli[5][oldornew_order[currentOldornew]] = 'Old'&amp;#10;            liveuseroldornew = 'Old'&amp;#10;        elif key == '2':&amp;#10;            stimuli[5][oldornew_order[currentOldornew]] = 'New'&amp;#10;            liveuseroldornew = 'New'&amp;#10;        now = datetime.datetime.now()&amp;#10;        diff = now-then&amp;#10;        oldornewrt = round(diff.total_seconds(),2)&amp;#10;        liveoldornewrt = str(oldornewrt)&amp;#10;        stimuli[6][oldornew_order[currentOldornew]] = oldornewrt&amp;#10;        continueRoutine = False" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="#Saves Stimuli name&amp;#10;thisExp4.addData('StimuliName', stimuli[7][oldornew_order[currentOldornew]])&amp;#10;&amp;#10;#Saves user old or new&amp;#10;thisExp4.addData('User_OldOrNew', stimuli[5][oldornew_order[currentOldornew]])&amp;#10;&amp;#10;#Save Correct oldornew&amp;#10;thisExp4.addData('Correct_OldOrNew', oldornewoldornew)&amp;#10;if oldornewoldornew == 'Old':&amp;#10;    #Save correct position of the image&amp;#10;    thisExp4.addData('Correct_Image_x', oldornewx)&amp;#10;    thisExp4.addData('Correct_Image_y', oldornewy)&amp;#10;else:&amp;#10;    thisExp4.addData('Correct_Image_x', 'N/A')&amp;#10;    thisExp4.addData('Correct_Image_y', 'N/A')&amp;#10;&amp;#10;thisExp4.addData('OldOrNew_RT', oldornewrt) #saves time from oldornew section&amp;#10;&amp;#10;thisExp4.addData('StudyStartTime', stimuli[8][oldornew_order[currentOldornew]]) #adds data&amp;#10;thisExp4.addData('OldOrNewStartTime', stimuli[9][oldornew_order[currentOldornew]]) #adds data&amp;#10;&amp;#10;#Next Entry of experiment&amp;#10;thisExp4.nextEntry()&amp;#10;&amp;#10;currentOldornew += 1" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="oldornewCode" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="oldornewImage">
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$oldornewPath" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="oldornewImage" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <CodeComponent name="liveCode9">
+        <Param name="Begin Experiment" updates="constant" val="#Each variable for the live is separate from the actual data saving variables and they are all in string form&amp;#10;&amp;#10;liveoldornewoldornew = 'N/A'&amp;#10;liveoldornewx = 'N/A'&amp;#10;liveoldornewy = 'N/A'&amp;#10;liveoldornewrad = 'N/A'&amp;#10;&amp;#10;liveoldornewrt = 'N/A'&amp;#10;liveuseroldornew = 'N/A'" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Old/New,Stimuli,' + str(currentOldornew+1) + ',' + str(num_test) + ',' + str(currentOldornew+2) + ',' + str(num_test+1) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + ',' + stimuli[7][oldornew_order[currentOldornew]] + ',' + liveoldornewoldornew + ',' + liveoldornewx + ',' + liveoldornewy + ',' + liveoldornewrad + ',' + liveoldornewrt + ',' + liveuseroldornew)&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode9" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="study">
+      <CodeComponent name="Code">
+        <Param name="Begin Experiment" updates="constant" val="currentStudy = 0&amp;#10;studyrad = 0 #Requires it to be defined at the beginning for some reason&amp;#10;studyOnset = -1" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="studyPath = stimuli[0][study_order[currentStudy]] #Gets path of the study image&amp;#10;studyx = stimuli[1][study_order[currentStudy]] #Gets x cord of the study image&amp;#10;studyy = stimuli[2][study_order[currentStudy]] #Gets y cord of the study image&amp;#10;studyrad = stimuli[3][study_order[currentStudy]] #Gets color of the study image&amp;#10;&amp;#10;nowtime = datetime.datetime.now().time() #Saves time they begun the section&amp;#10;stimuli[8][study_order[currentStudy]] = nowtime&amp;#10;&amp;#10;stimuli[10][study_order[currentStudy]] = round((datetime.datetime.now()-studyOnset).total_seconds(),2)" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="currentStudy += 1" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="Code" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="studyImage">
+        <Param name="color" updates="set every repeat" val="$[0,0,1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="hsv" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$studyPath" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="studyImage" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="(studyx, studyy)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="3.5" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <CodeComponent name="liveCode7">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Study,Stimuli,' + str(currentStudy+1) + ',' + str(num_study) + ',' + str(currentStudy+2) + ',' + str(num_study+1) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + ',' + stimuli[7][study_order[currentStudy]] + ',' + str(studyx) + ',' + str(studyy) + ',' + str(studyrad))&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode7" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="studyInstr">
+      <CodeComponent name="onsetCode2">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="studyOnset = 0" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="onsetCode2" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="studyText">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="studyText" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Now for the actual experiment&amp;#10;You will now study a larger number of images. For each image, try to remember the shape and location. &amp;#10;&amp;#10;&amp;#10;Press Space To Start" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_3">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_3" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode6">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;skipPractStr = ''&amp;#10;if skipPractice:&amp;#10;    skipPractStr = ',' + str(num_study) + ',' + str(num_test) + ',' + str(skipOldOrNew)&amp;#10;liveFile.write('Study,Instruction,1,1,1,' + str(num_study+1) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + skipPractStr)&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode6" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="allInstr">
+      <TextComponent name="text_4">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_4" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="You will now be presented with different images.&amp;#10;Each image will have a particular shape, color and location on the screen.&amp;#10;Try to remember each image.&amp;#10;&amp;#10;Press Space To Continue" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_6">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_6" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Practice,Instruction,1,2,3,11,' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second)) #Only done once to tell the programm the total amount&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if defaultKeyboard.getKeys(keyList=[&quot;escape&quot;]):&amp;#10;    liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;    liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;    liveliveFile.close()&amp;#10;    endExpNow = True" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="End">
+      <TextComponent name="text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="            You have finished&amp;#10;Thank you for your participation&amp;#10;    Please get the experimenter" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="code">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="StartEnd = False #Lets the screen update normally before quiting&amp;#10;&amp;#10;if not skipOldOrNew:&amp;#10;    currentStimuliTest = num_study&amp;#10;    testingNums = []&amp;#10;    for i in range(num_test-num_study):&amp;#10;        testingNum = 0&amp;#10;        while oldornew_order[testingNum] != currentStimuliTest:&amp;#10;            testingNum += 1&amp;#10;        testingNums.append(testingNum)&amp;#10;        currentStimuliTest += 1&amp;#10;&amp;#10;    print(testingNums)&amp;#10;&amp;#10;    currentStimuli = 0&amp;#10;    for i in range(num_test-num_study):&amp;#10;        while not currentStimuli in testingNums:&amp;#10;            currentStimuli += 1&amp;#10;        print(currentStimuli)&amp;#10;        thisExp2.addData('StimuliName', stimuli[7][oldornew_order[currentStimuli]])&amp;#10;        thisExp2.addData('TestOrder', 'N/A')&amp;#10;        &amp;#10;        thisExp2.addData('OldOrNewOrder', currentStimuli)&amp;#10;        thisExp2.addData('StudyOrder', 'N/A')&amp;#10;        &amp;#10;        thisExp2.addData('User_OldOrNew', stimuli[5][oldornew_order[currentStimuli]])&amp;#10;        &amp;#10;        thisExp2.addData('User_Image_x', 'N/A')&amp;#10;        thisExp2.addData('User_Image_y', 'N/A')&amp;#10;        &amp;#10;        thisExp2.addData('Correct_OldOrNew', 'New')&amp;#10;        &amp;#10;        thisExp2.addData('Correct_Image_x', 'N/A')&amp;#10;        thisExp2.addData('Correct_Image_y', 'N/A')&amp;#10;        &amp;#10;        thisExp2.addData('locationDist', 'N/A')&amp;#10;        &amp;#10;        thisExp2.addData('OldOrNew_RT', stimuli[6][oldornew_order[currentStimuli]])&amp;#10;        thisExp2.addData('Test_RT', 'N/A') &amp;#10;        &amp;#10;        thisExp2.addData('StudyStartTime', 'N/A') #adds data&amp;#10;        thisExp2.addData('OldOrNewStartTime', stimuli[9][oldornew_order[currentStimuli]]) #adds data&amp;#10;        thisExp2.addData('TestStartTime', 'N/A') #adds start time of stimulis on screen&amp;#10;        &amp;#10;        thisExp2.addData('StudyOnset', 'N/A') #adds data&amp;#10;        thisExp2.addData('OldOrNewOnset', stimuli[11][oldornew_order[currentStimuli]]) #adds data&amp;#10;        thisExp2.addData('TestOnset', 'N/A') #adds start time of stimulis on screen&amp;#10;        &amp;#10;        thisExp2.nextEntry()&amp;#10;        currentStimuli += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if StartEnd:&amp;#10;    win.flip()&amp;#10;    time.sleep(4) #Waits three seconds&amp;#10;    text.setText('Saving Data\n\nPlease Wait') #Changes text&amp;#10;    win.flip()&amp;#10;    core.quit()&amp;#10;StartEnd += 0.1 #For some reason it takes 11 frames/flips to update?" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="code" valType="code"/>
+      </CodeComponent>
+      <CodeComponent name="liveCode10">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Done,Done,1,1,1,1,' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + ',N/A,N/A,N/A,N/A,N/A,' + liveuseroldornew + ',' + liveuserx + ',' + liveusery + ',' + liveuserrad + ',N/A,' + livetestrt) #To get the last one the user did&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode10" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceStudy">
+      <CodeComponent name="ImageCode">
+        <Param name="Begin Experiment" updates="constant" val="#This array defines the practice stimuli&amp;#10;practiceStim = np.array([[thisdir + &quot;/Stimuli/test7.png&quot;, thisdir + &quot;/Stimuli/test3.png&quot;, thisdir + &quot;/Stimuli/test4.png&quot;, thisdir + &quot;/Stimuli/test5.png&quot;], &amp;#10;    [-0.64514, .72917], &amp;#10;    [.012639, .33681], &amp;#10;    [13, 77]])&amp;#10;&amp;#10;#Current trial used to select stimuli&amp;#10;practicestudytrail = 0" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="practicestudyPath = practiceStim[0][practicestudytrail] #Gets path of the study image&amp;#10;practicestudyx = practiceStim[1][practicestudytrail] #Gets x cord of the study image&amp;#10;practicestudyy = practiceStim[2][practicestudytrail] #Gets y cord of the study image&amp;#10;practicestudyrad = practiceStim[3][practicestudytrail] #Gets color of the study image" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="practicestudytrail += 1 #Next trail" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="ImageCode" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="practicestudyimage">
+        <Param name="color" updates="set every repeat" val="$[1,1,1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$practicestudyPath" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="practicestudyimage" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="set every repeat" val="(practicestudyx, practicestudyy)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="3.5" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <CodeComponent name="liveCode3">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Practice,Study,' + str(practicestudytrail+1) + ',2,' + str(practicestudytrail+4) + ',' + str(numberofpractice + 8) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode3" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceTestInstr">
+      <CodeComponent name="skipCode6">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if skipPractice:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="skipCode6" valType="code"/>
+      </CodeComponent>
+      <KeyboardComponent name="key_resp_4">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_4" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="testText">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.028" valType="code"/>
+        <Param name="name" updates="None" val="testText" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="You will now be tested on the location of the images you studied. &amp;#10;Use the mouse to drag the image to its original location.&amp;#10;During this practice, you will be given feedback on how close you are to the correct location&amp;#10;&amp;#10;Press Space To Start" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="liveCode4">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not skipPractice:&amp;#10;    currentTime = datetime.datetime.now()&amp;#10;    liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;    liveFile.write('Practice,Instruction,1,1,' + str(numberofpractice + 6) + ',' + str(numberofpractice + 8) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;    liveFile.close()&amp;#10;    liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode4" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceTest">
+      <MouseComponent name="mouse2">
+        <Param name="clickable" updates="constant" val="" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutineOnPress" updates="constant" val="never" valType="str"/>
+        <Param name="name" updates="None" val="mouse2" valType="code"/>
+        <Param name="newClicksOnly" updates="constant" val="False" valType="bool"/>
+        <Param name="saveMouseState" updates="None" val="never" valType="str"/>
+        <Param name="saveParamsClickable" updates="constant" val="" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
+      </MouseComponent>
+      <KeyboardComponent name="key_resp_8">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_8" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="dragCode">
+        <Param name="Begin Experiment" updates="constant" val="#Looking for code in Begin Experiment?&amp;#10;#All code and var definitions for begin experiment are in the test section" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="isDragging = False #Lets other parts of experiment know that the user is dragging the stimuli&amp;#10;didFinishDrag = False #Lets some aspects of the experiment only do something once after a drag has finished&amp;#10;hasDragged = False #For preventing the user from going on until dragged&amp;#10;place = (0,0) #Place of object (Image)&amp;#10;Image2.setPos(place) #Sets image to (0,0)&amp;#10;noClickShape.setPos(place) #Sets noClickShape to (0,0), see Begin Experiment for more about noClickShape&amp;#10;mousePlace = (0,0) #Place of mouse when clicked&amp;#10;mousex = 0.0 #Offset of mouse x&amp;#10;mousey = 0.0 #Offset of mouse y&amp;#10;firstDrag = True #For updating positions of mousex and mousey" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="#This whole complicated thing makes sure that the stimuli always stays on the mouse if they click on the stimuli first&amp;#10;if mouse2.isPressedIn(screenRect2) and didFinishDrag == False:#ScreenRect is used to detect if mouse is pressed anywhere on screen&amp;#10;    if mouse2.isPressedIn(noClickShape): #Checks when mouse is pressed down, see Begin Experiment for more about noClickShape&amp;#10;        #This calculates offset of mouse from center of object (Not needed but looks better in experiment)&amp;#10;        mousePlace = mouse2.getPos()&amp;#10;        if firstDrag == True: #Only updates offset once when starting the drag&amp;#10;            mousex = mousePlace[0] - place[0] #Gets the difference between the Image place and the mouse place for x&amp;#10;            mousey = mousePlace[1] - place[1] #Gets the difference between the Image place and the mouse place for y&amp;#10;            firstDrag = False #Disables first drag&amp;#10;        place = mousePlace[0] - mousex, mousePlace[1] - mousey #Adds this onto the place of the image for more intuitive dragging&amp;#10;        Image2.setPos(place) #Sets position of the image equal to the position of the mouse&amp;#10;        noClickShape.setPos(place) #Set position&amp;#10;        isDragging = True #Sets is dragging to true when the mouse starts on the object (noClickShape in this case)&amp;#10;        hasDragged = True #For preventing the user from going on until dragged&amp;#10;        win.mouseVisible = False #Hide mouse when dragging&amp;#10;    elif isDragging == True: #If the mouse started on noClickShape but isnt there right now (and still pressed down) it will update position anyway&amp;#10;        #This calculates offset of mouse from center of object (Not needed but looks better in experiment)&amp;#10;        mousePlace = mouse2.getPos()&amp;#10;        if firstDrag == True: #Only updates offset once when starting the drag&amp;#10;                mousex = mousePlace[0] - place[0] #Gets the difference between the Image place and the mouse place for x&amp;#10;                mousey = mousePlace[1] - place[1] #Gets the difference between the Image place and the mouse place for y&amp;#10;                firstDrag = False #Disables first drag&amp;#10;        place = mousePlace[0] - mousex, mousePlace[1] - mousey #Adds this onto the place of the image for more intuitive dragging&amp;#10;        Image2.setPos(place) #Sets position of the image equal to the position of the mouse&amp;#10;        noClickShape.setPos(place) #Set position&amp;#10;elif didFinishDrag == True and isDragging == True: #Disables didFinishDrag for good&amp;#10;    didFinishDrag = False&amp;#10;elif isDragging == True: #This is an elif statement so will only play if others above are false&amp;#10;    didFinishDrag = True #Makes var true so it only is true for one frame&amp;#10;    isDragging = False #It is no longer dragging&amp;#10;    win.mouseVisible = True #Show mouse once your done dragging&amp;#10;    firstDrag = True #re-enables first drag again so when the first if statement plays it will update position of offset&amp;#10;else:&amp;#10;    didFinishDrag = False #Disables didFinishDrag for good&amp;#10;&amp;#10;noClickShape.draw() #Draws no click shape" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="dragCode" valType="code"/>
+      </CodeComponent>
+      <PolygonComponent name="screenRect2">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="fillColor" updates="constant" val="$[-1.000,-1.000,-1.000]" valType="str"/>
+        <Param name="fillColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="lineColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="lineColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="lineWidth" updates="constant" val="1" valType="code"/>
+        <Param name="nVertices" updates="constant" val="4" valType="int"/>
+        <Param name="name" updates="None" val="screenRect2" valType="code"/>
+        <Param name="opacity" updates="constant" val="0" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="shape" updates="constant" val="rectangle" valType="str"/>
+        <Param name="size" updates="constant" val="(2, 2)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </PolygonComponent>
+      <CodeComponent name="feedbackCode">
+        <Param name="Begin Experiment" updates="constant" val="#Feedback text setup, tells you how close you are&amp;#10;FeedbackText = visual.TextStim(win=win, name='FeedbackText',&amp;#10;    text='',&amp;#10;    font='Arial',&amp;#10;    pos=(0, 0.4), height=0.03, wrapWidth=None, ori=0, &amp;#10;    color='white', colorSpace='rgb', opacity=1, &amp;#10;    languageStyle='LTR',&amp;#10;    depth=0.0);&amp;#10;&amp;#10;#This text makes you select the correct color and location&amp;#10;ContinueText = visual.TextStim(win=win, name='ColorText',&amp;#10;    text='',&amp;#10;    font='Arial',&amp;#10;    pos=(0, -0.4), height=0.03, wrapWidth=None, ori=0, &amp;#10;    color='white', colorSpace='rgb', opacity=1, &amp;#10;    languageStyle='LTR',&amp;#10;    depth=0.0);" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="then = datetime.datetime.now() #Saves time they begun the section&amp;#10;colorText = ''&amp;#10;posText = ''&amp;#10;degrees = 0 #Resests degrees so that if it saves with an exit the degrees will be 0 and not some random number&amp;#10;Image2.setColor([0,0,1])#sets Image hsv color&amp;#10;FeedbackText.setText('')&amp;#10;ContinueText.setText('')&amp;#10;colorIsCorrect = False #If they are on the correct color&amp;#10;locationIsCorrect = False #If they are on the correct location" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if isDragging: #When you are dragging the image&amp;#10;    locationIsCorrect = False #resets location is correct bool&amp;#10;    xpos, ypos = place&amp;#10;    distx = abs(xpos-practicetestx) #find the distance in x between correct and user&amp;#10;    disty = abs(ypos-practicetesty) #find the distance in y between correct and user&amp;#10;    pythDist = math.sqrt((distx*distx)+(disty*disty)) #Uses pythagorean theorem to find distance&amp;#10;    pythDist = round(pythDist,5) #Round to prevent errors&amp;#10;    if pythDist &gt; 0.15:&amp;#10;        posText = '    The location is incorrect    '&amp;#10;    elif pythDist &gt; 0.05:&amp;#10;        posText = 'The location is nearly correct'&amp;#10;    elif pythDist &lt; 0.05:&amp;#10;        posText = '     The location is spot on!     '&amp;#10;        locationIsCorrect = True&amp;#10;    FeedbackText.setText(posText)&amp;#10;FeedbackText.draw()&amp;#10;if isDragging and not locationIsCorrect: #If you try to continue it will wave a finger at you a say no oh, choose a correct location&amp;#10;        ContinueText.setText('Please select a valid loaction')&amp;#10;if not mouse2.isPressedIn(screenRect2) and locationIsCorrect:&amp;#10;    ContinueText.setText('Press Space To Continue') #When they finally are correct tell them you can press the space bar to continue&amp;#10;    ContinueText.autoDraw = True #Draw the text&amp;#10;elif locationIsCorrect: #This will only call if they are dragging&amp;#10;    ContinueText.setText('') #Sets the text to nothing" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="ContinueText.autoDraw = False #Stop drawing the text" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="feedbackCode" valType="code"/>
+      </CodeComponent>
+      <CodeComponent name="exitCode">
+        <Param name="Begin Experiment" updates="constant" val="practicetesttrail = 0 #Current trail user is on&amp;#10;practiceTestOrder = [0, 1] #order of the practice test, different then study order&amp;#10;practicetestPath = 'None'" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="mouse2.setPos(newPos=(0, 0.001)) #resets position of mouse, has to be offset slightly or else it will select a color for some reason&amp;#10;win.mouseVisible = True #Show mouse only if it is supposed to continue routine&amp;#10;&amp;#10;#These two vars give the person help with knowing how to drag/color live&amp;#10;helpDrag = False&amp;#10;&amp;#10;opacOfArrows = 0.0 #Opacity of the arrows&amp;#10;opacUp = True #If Opacity is rising or falling&amp;#10;&amp;#10;colorDeg = 0 #Degrees of slider for colorHelp&amp;#10;colorDegUp = True #Degrees of the slider going up or down&amp;#10;colorOpac = 0 #Opacity of the slider&amp;#10;&amp;#10;practicetestPath = practiceStim[0][practiceTestOrder[practicetesttrail]] #Gets path of the study image&amp;#10;practicetestx = practiceStim[1][practiceTestOrder[practicetesttrail]] #Gets x cord of the study image&amp;#10;practicetesty = practiceStim[2][practiceTestOrder[practicetesttrail]] #Gets y cord of the study image&amp;#10;practicetestrad = practiceStim[3][practiceTestOrder[practicetesttrail]] #Gets color of the study image" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if theseKeys == 'space':  # if space is pressed&amp;#10;    #a response ends the routine&amp;#10;    helpDrag = True #If they have not dragged yet and try to end routine&amp;#10;    if hasDragged: #Stops routine if they have colored and moved the stimuli&amp;#10;        if locationIsCorrect:&amp;#10;            continueRoutine = False&amp;#10;        else:&amp;#10;            ContinueText.autoDraw = True&amp;#10;&amp;#10;#Help animations&amp;#10;if helpDrag == True and hasDragged == False:&amp;#10;    #Makes a nice animation&amp;#10;    if opacOfArrows &gt;= 1.0: #changes direction of opacity&amp;#10;        opacUp = False&amp;#10;    elif opacOfArrows &lt;= 0.0:&amp;#10;        opacUp = True&amp;#10;    if opacUp == True:&amp;#10;        opacOfArrows += 0.01 #Changes opacity, change this var to make animation faster or slower&amp;#10;    else:&amp;#10;        opacOfArrows -= 0.01&amp;#10;    #Draws aroows and text&amp;#10;    arrowUp.opacity = opacOfArrows&amp;#10;    arrowDown.opacity = opacOfArrows&amp;#10;    arrowRight.opacity = opacOfArrows&amp;#10;    arrowLeft.opacity = opacOfArrows&amp;#10;    arrowUp.draw()&amp;#10;    arrowDown.draw()&amp;#10;    arrowRight.draw()&amp;#10;    arrowLeft.draw()&amp;#10;    DragText.draw() #Tells user what to do" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="win.mouseVisible = False #Hide mouse&amp;#10;practicetesttrail += 1" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="exitCode" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="Image2">
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="hsv" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$practicetestPath" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="Image2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <CodeComponent name="liveCode14">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Practice,Test,' + str(practicetesttrail+1) + ',2,' + str(numberofpractice + practicetesttrail + 7) +',' + str(numberofpractice + 8) +',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode14" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="testInstr">
+      <CodeComponent name="onsetCode3">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="testOnset = 0" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="onsetCode3" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_3">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="You will now be tested on the location of the images you studied. &amp;#10;Use the mouse to drag the image to its original location.&amp;#10;Once you're done press the spacebar to continue.&amp;#10;&amp;#10;You will NOT be given feedback on how close you are.&amp;#10;&amp;#10;Press Space To Start" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_5">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_5" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode8">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Test,Instruction,1,1,1,' + str(num_study+1) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + ',' + liveoldornewrt + ',' + liveuseroldornew) #Gets stuff from last trail&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode8" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceStudyInstr">
+      <CodeComponent name="SkipCode5">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if skipPractice:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="SkipCode5" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_5">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_5" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Lets start with some practice.&amp;#10;&amp;#10;You will now be shown two objects. Memorize their shape and location.&amp;#10;Each object will stay on the screen for three seconds.&amp;#10;&amp;#10;Press Space To Continue" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_7">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_7" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode2">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not skipPractice:&amp;#10;    currentTime = datetime.datetime.now()&amp;#10;    liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;    liveFile.write('Practice,Instruction,1,1,3,' + str(numberofpractice + 8) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;    liveFile.close()&amp;#10;    liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode2" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceOldornew">
+      <TextComponent name="oldornewText2">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="oldornewText2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, -.45)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="1 - Old        2 - New" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="olornewCode2">
+        <Param name="Begin Experiment" updates="constant" val="import time&amp;#10;practiceoldornewtrail = 0 #Current trail user is on&amp;#10;practiceOldornewOrder = [3, 1, 2, 0] #order of the practice test, different then study order" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="theseKeys = '' #Gets key press&amp;#10;win.mouseVisible = False #Hide mouse&amp;#10;ttime = 1 #Lets user respond immediatly&amp;#10;&amp;#10;practiceoldornewPath = ''&amp;#10;&amp;#10;practiceoldornewPath = practiceStim[0][practiceOldornewOrder[practiceoldornewtrail]] #Gets path of the study image&amp;#10;&amp;#10;ttime = 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if key == '1' and ttime &gt;= 1: #if user selected old&amp;#10;        if practiceOldornewOrder[practiceoldornewtrail] == 0 or practiceOldornewOrder[practiceoldornewtrail] == 1:&amp;#10;            continueRoutine = False #If they are correct, go on to next routine&amp;#10;        else:&amp;#10;            oldornewText2.setText('Wrong, the image is new') #If they are not correct, tell them they are wrong&amp;#10;            #win.flip() #Updates screen&amp;#10;            #time.sleep(1) #Waits for one second&amp;#10;            ttime = 0&amp;#10;    elif key == '2' and ttime &gt;= 1: #If user selected new&amp;#10;        if practiceOldornewOrder[practiceoldornewtrail] == 2 or practiceOldornewOrder[practiceoldornewtrail] == 3:&amp;#10;            continueRoutine = False #If they are correct, go on to next routine&amp;#10;        else:&amp;#10;            oldornewText2.setText('Wrong, the image is old') #If they are not correct, tell them they are wrong&amp;#10;            #win.flip() #Updates screen&amp;#10;            #time.sleep(1) #Waits for one second&amp;#10;            ttime = 0&amp;#10;&amp;#10;if ttime &gt;= 1:&amp;#10;    oldornewText2.setText('1 - Old        2 - New') #Re-displays old text&amp;#10;else:&amp;#10;    ttime += 0.01" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="practiceoldornewtrail += 1" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="olornewCode2" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="oldornewImage2">
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="set every repeat" val="$practiceoldornewPath" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="oldornewImage2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <CodeComponent name="liveCode5">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="currentTime = datetime.datetime.now()&amp;#10;liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;liveFile.write('Practice,Old/New,' + str(practiceoldornewtrail+1) + ',4,' + str(practiceoldornewtrail+7) +',' + str(numberofpractice + 8) +',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;liveFile.close()&amp;#10;liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode5" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceExampleInstr">
+      <CodeComponent name="SkipCode3">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if skipPractice:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="SkipCode3" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_2">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="In this experiment, you will be presented with different images.&amp;#10;Your task will be to remember each shape and its location on the screen.&amp;#10;&amp;#10;To respond, you will need to use the mouse to drag an image to a place on the screen.&amp;#10;&amp;#10;Press space to see an example and try it out" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode11">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not skipPractice:&amp;#10;    currentTime = datetime.datetime.now()&amp;#10;    liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;    liveFile.write('Practice,Instruction,1,1,1,' + str(numberofpractice+8) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second) + ',' + str(num_study) + ',' + str(num_test) + ',' + str(skipOldOrNew))&amp;#10;    liveFile.close()&amp;#10;    liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode11" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="practiceExample">
+      <CodeComponent name="SkipCode4">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if skipPractice:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="SkipCode4" valType="code"/>
+      </CodeComponent>
+      <ImageComponent name="Image3">
+        <Param name="color" updates="constant" val="$[1,0,1]" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="hsv" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="image" updates="constant" val="$thisdir + '/Stimuli/test6.png'" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="name" updates="None" val="Image3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="(0.19, 0.19)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </ImageComponent>
+      <MouseComponent name="mouse3">
+        <Param name="clickable" updates="constant" val="" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutineOnPress" updates="constant" val="never" valType="str"/>
+        <Param name="name" updates="None" val="mouse3" valType="code"/>
+        <Param name="newClicksOnly" updates="constant" val="False" valType="bool"/>
+        <Param name="saveMouseState" updates="None" val="never" valType="str"/>
+        <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
+      </MouseComponent>
+      <KeyboardComponent name="key_resp_9">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_9" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="DragCode3">
+        <Param name="Begin Experiment" updates="constant" val="#Looking for code in Begin Experiment?&amp;#10;#All code and var definitions for begin experiment are in the test section" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="isDragging = False #Lets other parts of experiment know that the user is dragging the stimuli&amp;#10;didFinishDrag = False #Lets some aspects of the experiment only do something once after a drag has finished&amp;#10;hasDragged = False #For preventing the user from going on until dragged&amp;#10;place = (0,0) #Place of object (Image)&amp;#10;Image3.setPos(place) #Sets image to (0,0)&amp;#10;noClickShape.setPos(place) #Sets noClickShape to (0,0), see Begin Experiment for more about noClickShape&amp;#10;mousePlace = (0,0) #Place of mouse when clicked&amp;#10;mousex = 0.0 #Offset of mouse x&amp;#10;mousey = 0.0 #Offset of mouse y&amp;#10;firstDrag = True #For updating positions of mousex and mousey" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="#This whole complicated thing makes sure that the stimuli always stays on the mouse if they click on the stimuli first&amp;#10;if mouse3.isPressedIn(screenRect3) and didFinishDrag == False:#ScreenRect is used to detect if mouse is pressed anywhere on screen&amp;#10;    if mouse3.isPressedIn(noClickShape): #Checks when mouse is pressed down, see Begin Experiment for more about noClickShape&amp;#10;        #This calculates offset of mouse from center of object (Not needed but looks better in experiment)&amp;#10;        mousePlace = mouse3.getPos()&amp;#10;        if firstDrag == True: #Only updates offset once when starting the drag&amp;#10;            mousex = mousePlace[0] - place[0] #Gets the difference between the Image place and the mouse place for x&amp;#10;            mousey = mousePlace[1] - place[1] #Gets the difference between the Image place and the mouse place for y&amp;#10;            firstDrag = False #Disables first drag&amp;#10;        place = mousePlace[0] - mousex, mousePlace[1] - mousey #Adds this onto the place of the image for more intuitive dragging&amp;#10;        Image3.setPos(place) #Sets position of the image equal to the position of the mouse&amp;#10;        noClickShape.setPos(place) #Set position&amp;#10;        isDragging = True #Sets is dragging to true when the mouse starts on the object (noClickShape in this case)&amp;#10;        hasDragged = True #For preventing the user from going on until dragged&amp;#10;        win.mouseVisible = False #Hide mouse when dragging&amp;#10;    elif isDragging == True: #If the mouse started on noClickShape but isnt there right now (and still pressed down) it will update position anyway&amp;#10;        #This calculates offset of mouse from center of object (Not needed but looks better in experiment)&amp;#10;        mousePlace = mouse3.getPos()&amp;#10;        if firstDrag == True: #Only updates offset once when starting the drag&amp;#10;                mousex = mousePlace[0] - place[0] #Gets the difference between the Image place and the mouse place for x&amp;#10;                mousey = mousePlace[1] - place[1] #Gets the difference between the Image place and the mouse place for y&amp;#10;                firstDrag = False #Disables first drag&amp;#10;        place = mousePlace[0] - mousex, mousePlace[1] - mousey #Adds this onto the place of the image for more intuitive dragging&amp;#10;        Image3.setPos(place) #Sets position of the image equal to the position of the mouse&amp;#10;        noClickShape.setPos(place) #Set position&amp;#10;elif didFinishDrag == True and isDragging == True: #Disables didFinishDrag for good&amp;#10;    didFinishDrag = False&amp;#10;elif isDragging == True: #This is an elif statement so will only play if others above are false&amp;#10;    didFinishDrag = True #Makes var true so it only is true for one frame&amp;#10;    isDragging = False #It is no longer dragging&amp;#10;    win.mouseVisible = True #Show mouse once your done dragging&amp;#10;    firstDrag = True #re-enables first drag again so when the first if statement plays it will update position of offset&amp;#10;else:&amp;#10;    didFinishDrag = False #Disables didFinishDrag for good&amp;#10;&amp;#10;noClickShape.draw() #Draws no click shape" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="DragCode3" valType="code"/>
+      </CodeComponent>
+      <PolygonComponent name="screenRect3">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="fillColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="fillColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="lineColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="lineColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="lineWidth" updates="constant" val="1" valType="code"/>
+        <Param name="nVertices" updates="constant" val="4" valType="int"/>
+        <Param name="name" updates="None" val="screenRect3" valType="code"/>
+        <Param name="opacity" updates="constant" val="0" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="shape" updates="constant" val="rectangle" valType="str"/>
+        <Param name="size" updates="constant" val="(2, 2)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </PolygonComponent>
+      <CodeComponent name="AnimationCode">
+        <Param name="Begin Experiment" updates="constant" val="#Color text 2 setup, keep this so it's reused for telling the user to continue&amp;#10;ColorText2 = visual.TextStim(win=win, name='ColorText',&amp;#10;    text='',&amp;#10;    font='Arial',&amp;#10;    pos=(0, -0.4), height=0.03, wrapWidth=None, ori=0, &amp;#10;    color='white', colorSpace='rgb', opacity=1, &amp;#10;    languageStyle='LTR',&amp;#10;    depth=0.0);&amp;#10;&amp;#10;#Drag text 2 setup, tells user to select a place&amp;#10;DragText2 = visual.TextStim(win=win, name='DragText',&amp;#10;    text='Drag and Drop the object to a location on the screen',&amp;#10;    font='Arial',&amp;#10;    pos=(0, -0.4), height=0.03, wrapWidth=None, ori=0, &amp;#10;    color='white', colorSpace='rgb', opacity=1, &amp;#10;    languageStyle='LTR',&amp;#10;    depth=0.0);" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="win.mouseVisible = True #Show mouse at start&amp;#10;mouse2.setPos(newPos=(0, 0.001)) #resets position of mouse, has to be offset slightly or else it will select a color for some reason&amp;#10;&amp;#10;#These two vars give the person help with knowing how to drag/color live&amp;#10;helpColor = False&amp;#10;&amp;#10;opacOfArrows = 0.0 #Opacity of the arrows&amp;#10;opacUp = True #If Opacity is rising or falling&amp;#10;&amp;#10;colorDeg = 0 #Degrees of slider for colorHelp&amp;#10;colorDegUp = True #Degrees of the slider going up or down&amp;#10;colorOpac = 0 #Opacity of the slider" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if not hasDragged:&amp;#10;    helpDrag = True #Tells the user to drag if they have already colored&amp;#10;elif not isDragging: #Tells user they can continue once they've colored and placed, re-uses colortext2 text&amp;#10;    ColorText2.setText('Great! Whenever you\'re ready to continue, click the spacebar')&amp;#10;    ColorText2.draw()&amp;#10;&amp;#10;if theseKeys == 'space':  # if space is pressed&amp;#10;    #a response ends the routine&amp;#10;    if hasDragged: #Stops routine if they have colored and moved the stimuli&amp;#10;        continueRoutine = False&amp;#10;&amp;#10;#Help animations&amp;#10;if helpDrag == True and hasDragged == False:&amp;#10;    #Makes a nice animation&amp;#10;    if opacOfArrows &gt;= 1.0: #changes direction of opacity&amp;#10;        opacUp = False&amp;#10;    elif opacOfArrows &lt;= 0.0:&amp;#10;        opacUp = True&amp;#10;    if opacUp == True:&amp;#10;        opacOfArrows += 0.01 #Changes opacity, change this var to make animation faster or slower&amp;#10;    else:&amp;#10;        opacOfArrows -= 0.01&amp;#10;    #Draws aroows and text&amp;#10;    arrowUp.opacity = opacOfArrows&amp;#10;    arrowDown.opacity = opacOfArrows&amp;#10;    arrowRight.opacity = opacOfArrows&amp;#10;    arrowLeft.opacity = opacOfArrows&amp;#10;    arrowUp.draw()&amp;#10;    arrowDown.draw()&amp;#10;    arrowRight.draw()&amp;#10;    arrowLeft.draw()&amp;#10;    DragText2.draw() #Tells user what to do" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="win.mouseVisible = False #Hide mouse at end" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="AnimationCode" valType="code"/>
+      </CodeComponent>
+      <CodeComponent name="liveCode12">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not skipPractice:&amp;#10;    currentTime = datetime.datetime.now()&amp;#10;    liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;    liveFile.write('Practice,Example,1,1,2,' + str(numberofpractice + 8) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;    liveFile.close()&amp;#10;    liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode12" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="checkForOverwrite">
+      <CodeComponent name="code_2">
+        <Param name="Begin Experiment" updates="constant" val="import shutil #To delete folders&amp;#10;#To check if files exist already&amp;#10;isData = False&amp;#10;isLive = False" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if os.path.exists(_thisDir + os.sep + u'data/%s/sub_%s_%s_test.csv' % (expInfo['participant'], expInfo['participant'], expName)):&amp;#10;    isData = True #If the data folder exists&amp;#10;    print('isData')&amp;#10;    #Sets text to only say data folder&amp;#10;    text_6.setText('Participant ' + expInfo['participant'] + ' already exists in the data folder.\nWould you like too clear and OVERWRITE all data or CANCEL experiment?\nYou can also CONTINUE to create a new file (ex: data1) in the data folder.\nThis is not recommended as some live functionality may be lost.')&amp;#10;if os.path.exists(_thisDir + os.sep + u'live/'+ expInfo['participant'] + '/live1' + '.csv'):&amp;#10;    isLive = True #If the live folder exists&amp;#10;    print('isLive')&amp;#10;    #Sets text to only say live folder&amp;#10;    text_6.setText('Participant ' + expInfo['participant'] +' already exists in the live folder.\nWould you like too clear and OVERWRITE all data or CANCEL experiment?\nYou can also CONTINUE to create a new file (ex: data1) in the data folder.\nThis is not recommended as some live functionality may be lost.')&amp;#10;&amp;#10;if isLive and isData:&amp;#10;    #Sets text to say both data and live folder&amp;#10;    text_6.setText('Participant ' + expInfo['participant'] +' already exists in both the live and data folder.\nWould you like too clear and OVERWRITE all data or CANCEL experiment?\nYou can also CONTINUE to create a new file (ex: data1) in the data folder.\nThis is not recommended as some live functionality may be lost.')&amp;#10;elif not isLive and not isData:&amp;#10;    #If the participant # is new, move on without giving a prompt&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="if mouse.isPressedIn(text_7):&amp;#10;    #Delete all data from folders&amp;#10;    shutil.rmtree(_thisDir + os.sep + u'data/%s' % (expInfo['participant']), ignore_errors=True)&amp;#10;    shutil.rmtree(_thisDir + os.sep + u'live/%s' % (expInfo['participant']), ignore_errors=True)&amp;#10;    continueRoutine = False #Move on to the next routine&amp;#10;elif mouse.isPressedIn(text_8):&amp;#10;    core.quit() #If the user clicks cancel, quit the experiment&amp;#10;elif mouse.isPressedIn(text_9):&amp;#10;    continueRoutine = False #If the user clicks continue anyway, go onto the next routine without doing anything else&amp;#10;&amp;#10;keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="code_2" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_6">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_6" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.2)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="This participant already exists in both the live and data folder.&amp;#10;Would you like too clear and OVERWRITE all data or CANCEL experiment?&amp;#10;You can also CONTINUE to create a new file (ex: data1) in the data folder.&amp;#10;This is not recommended as some live functionality may be lost." valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_7">
+        <Param name="color" updates="constant" val="red" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="text_7" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0.15, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Overwrite" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_8">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="text_8" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.15, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Cancel" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_9">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_9" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0.55, -0.46)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Continue Anyway (Not Recommended)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <MouseComponent name="mouse">
+        <Param name="clickable" updates="constant" val="" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutineOnPress" updates="constant" val="never" valType="str"/>
+        <Param name="name" updates="None" val="mouse" valType="code"/>
+        <Param name="newClicksOnly" updates="constant" val="True" valType="bool"/>
+        <Param name="saveMouseState" updates="None" val="never" valType="str"/>
+        <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
+      </MouseComponent>
+    </Routine>
+    <Routine name="oldornewInstr">
+      <CodeComponent name="SkipCode">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if skipOldOrNew:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="oldornewOnset = 0" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="SkipCode" valType="code"/>
+      </CodeComponent>
+      <KeyboardComponent name="key_resp_11">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_11" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode17">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not skipOldOrNew:&amp;#10;    currentTime = datetime.datetime.now()&amp;#10;    liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;    liveFile.write('Old/New,Instruction,1,1,1,' + str(num_test + 1) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;    liveFile.close()&amp;#10;    liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode17" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_11">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_11" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="We will now test you on how well you remember the shapes you just saw.&amp;#10;Just like in the practice, decide if you have seen each shape during the study, irrespective of its location.&amp;#10;If you have seen it during the study, press 1 for OLD. If you have not seen it, press 2 for NEW.&amp;#10;You will not be given feedback.&amp;#10;&amp;#10;Press Space To Start" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="practiceOldornewInstr">
+      <CodeComponent name="SkipCode2">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if skipOldOrNew or skipPractice:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="SkipCode2" valType="code"/>
+      </CodeComponent>
+      <KeyboardComponent name="key_resp_10">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_10" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <CodeComponent name="liveCode16">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not skipPractice and not skipOldOrNew:&amp;#10;    currentTime = datetime.datetime.now()&amp;#10;    liveFile = open(liveFileName+str(liveNum)+'.csv', 'w')&amp;#10;    liveFile.write('Practice,Instruction,1,1,6,' + str(numberofpractice + 8) + ',' + str(currentTime.hour) + ',' + str(currentTime.minute) + ',' + str(currentTime.second))&amp;#10;    liveFile.close()&amp;#10;    liveNum += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="keys = event.getKeys()&amp;#10;for key in keys:&amp;#10;    if 'command' in key:&amp;#10;        command = True&amp;#10;    if 'esc' in key and command:&amp;#10;        liveliveFile = open(liveFileName+'live.csv', 'w')&amp;#10;        liveliveFile.write('Abort,Abort,1,1,1,1,')&amp;#10;        liveliveFile.close()&amp;#10;        core.quit()" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="liveCode16" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_10">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="text_10" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="You'll now be shown multiple shapes.&amp;#10;For each shape, decide if you have seen the shape during the study, irrespective of its location.&amp;#10;If you have seen it during study, press 1 for OLD. If you have not seen it, press 2 for NEW.&amp;#10;&amp;#10;Press Space To Start" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="checkForOverwrite"/>
+    <Routine name="header"/>
+    <Routine name="practiceExampleInstr"/>
+    <Routine name="practiceExample"/>
+    <Routine name="practiceStudyInstr"/>
+    <LoopInitiator loopType="TrialHandler" name="practicestudys">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="$num_practstudy" valType="code"/>
+      <Param name="name" updates="None" val="practicestudys" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="reset"/>
+    <Routine name="practiceStudy"/>
+    <LoopTerminator name="practicestudys"/>
+    <Routine name="practiceOldornewInstr"/>
+    <LoopInitiator loopType="TrialHandler" name="practiceoldornews">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="num_practoldornew" valType="code"/>
+      <Param name="name" updates="None" val="practiceoldornews" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="reset"/>
+    <Routine name="practiceOldornew"/>
+    <LoopTerminator name="practiceoldornews"/>
+    <Routine name="practiceTestInstr"/>
+    <LoopInitiator loopType="TrialHandler" name="practiceTests">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="$num_practstudy" valType="code"/>
+      <Param name="name" updates="None" val="practiceTests" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="reset"/>
+    <Routine name="practiceTest"/>
+    <LoopTerminator name="practiceTests"/>
+    <Routine name="studyInstr"/>
+    <LoopInitiator loopType="TrialHandler" name="studys">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="$num_study" valType="code"/>
+      <Param name="name" updates="None" val="studys" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="reset"/>
+    <Routine name="study"/>
+    <LoopTerminator name="studys"/>
+    <Routine name="oldornewInstr"/>
+    <LoopInitiator loopType="TrialHandler" name="oldornews">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="$num_oldornew" valType="code"/>
+      <Param name="name" updates="None" val="oldornews" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="reset"/>
+    <Routine name="oldornew"/>
+    <LoopTerminator name="oldornews"/>
+    <Routine name="testInstr"/>
+    <LoopInitiator loopType="TrialHandler" name="tests">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="$num_study" valType="code"/>
+      <Param name="name" updates="None" val="tests" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="reset"/>
+    <Routine name="test"/>
+    <LoopTerminator name="tests"/>
+    <Routine name="End"/>
+  </Flow>
+</PsychoPy2experiment>

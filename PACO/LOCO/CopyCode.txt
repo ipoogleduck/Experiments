@@ -1,0 +1,600 @@
+#COPY THE FOLOWING
+
+
+
+
+
+
+
+#MARK: Generate coordinates
+#This will create the x and y coordiantes for use, change num_study variable and this will adapt by itself
+#Maximum coordinates (Right Top of screen) (You probably don't want this to go all the way to the end of the screen)
+screenx = 0.78 #Maximum x point on Psychopy screen you want the stimuli to go to
+screeny = 0.39 #Maximum y point on Psychopy screen you want the stimuli to go to
+
+#screen is approx 2 by 1, so below numbers should reflect that
+divx = 1 #How many points there can be accross the x axis
+divy = 1 #How many points there can be accross the y axis
+
+numberofcords = 0 #Number of actual cords when excluding center ones
+
+while numberofcords < num_study:
+  if divy*2 == divx or divy*2 == divx+1:
+    divx += 1
+  else:
+    divy += 1
+  howmanyall = divx*divy #How many 
+  numberofcords = 0
+  xcords = [] #array of cords for x
+  ycords = [] #array of cords for y
+  ix = 0
+  while ix <= divx:
+    if ix == 0:
+      xmult = 0
+    else:
+      xmult = ix/divx
+    iy = 0
+    while iy <= divy:
+      if iy == 0:
+        ymult = 0
+      else:
+        ymult = iy/divy
+      #print(" ")
+      #print(xmult, ymult) #For debugging
+      xcord = ((screenx*2)*xmult)-screenx
+      ycord = ((screeny*2)*ymult)-screeny
+      if not xcord < 0.15 or not xcord > -0.15 or not ycord < 0.15 or not ycord > -0.15: #Exclusion points, change these to choose which points are excluded bc they are too close to the center
+        #print("Cordinates:")
+        numberofcords += 1
+        #print(xcord) #Uncomment these to get the raw x and y coordinates on separate lines
+        #print(ycord)
+        #print("(" + str(xcord) + "," + str(ycord) + ")") #Uncomment to print coordinates as (x,y), you can use this for testing out points on desmos graph?
+        xcords.append(xcord)
+        ycords.append(ycord)
+      iy += 1
+    ix += 1
+#You want this to equal as close to the number of possible coordinates you want as possible (In my case I want it to be close to 70)
+print(" ")
+print(xcords)
+print(ycords)
+print("Number of Coordinates: " + str(numberofcords)) 
+print("There are " + str(divx + 1) + " x coordinates and " + str(divy + 1) + " y coordinates")
+
+#MARK: Randomize coordinates
+cordNums= [] #These numbers direct the final cords to the correct place in cords
+#Final coordinates that are randomized
+finalxcords = []
+finalycords = []
+
+for i in range(numberofcords): #Randomizes cordNums to be used as pickers for the final cords, randomizing with numberofcords makes sure any coordinates the above function generates can be used
+    cordNums.append(i)
+random.shuffle(cordNums) #Randomizes items in cordnums
+for i in range(num_study): #Randomizes x and y cords together so they don't get all mixed up
+    finalxcords.append(xcords[cordNums[i]])
+    finalycords.append(ycords[cordNums[i]])
+print(cordNums)
+
+
+
+
+
+
+
+#NEXT
+
+
+
+
+
+
+#MARK: Detect Mouse Press On Segment
+#Takes the multiplier (How many segments) and multiplies it by rad number
+#Then adds half of the multiplier (to make color average)
+if isDragging == False and isOnColor == True: #If its on a segment it will update the color of the Image2
+    if mouse2.isPressedIn(rad0): #Will not set color if dragging Image2
+        degrees = (orimult*0)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad1):
+        degrees = (orimult*1)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad2):
+        degrees = (orimult*2)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad3):
+        degrees = (orimult*3)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad4):
+        degrees = (orimult*4)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad5):
+        degrees = (orimult*5)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad6):
+        degrees = (orimult*6)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad7):
+        degrees = (orimult*7)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad8):
+        degrees = (orimult*8)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad9):
+        degrees = (orimult*9)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad10):
+        degrees = (orimult*10)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad11):
+        degrees = (orimult*11)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad12):
+        degrees = (orimult*12)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad13):
+        degrees = (orimult*13)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad14):
+        degrees = (orimult*14)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad15):
+        degrees = (orimult*15)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad16):
+        degrees = (orimult*16)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad17):
+        degrees = (orimult*17)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad18):
+        degrees = (orimult*18)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad19):
+        degrees = (orimult*19)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad20):
+        degrees = (orimult*20)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad21):
+        degrees = (orimult*21)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad22):
+        degrees = (orimult*22)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad23):
+        degrees = (orimult*23)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad24):
+        degrees = (orimult*24)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad25):
+        degrees = (orimult*25)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad26):
+        degrees = (orimult*26)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad27):
+        degrees = (orimult*27)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad28):
+        degrees = (orimult*28)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad29):
+        degrees = (orimult*29)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad30):
+        degrees = (orimult*30)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad31):
+        degrees = (orimult*31)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad32):
+        degrees = (orimult*32)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad33):
+        degrees = (orimult*33)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad34):
+        degrees = (orimult*34)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad35):
+        degrees = (orimult*35)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad36):
+        degrees = (orimult*36)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad37):
+        degrees = (orimult*37)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad38):
+        degrees = (orimult*38)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad39):
+        degrees = (orimult*39)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad40):
+        degrees = (orimult*40)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad41):
+        degrees = (orimult*41)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad42):
+        degrees = (orimult*42)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad43):
+        degrees = (orimult*43)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad44):
+        degrees = (orimult*44)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad45):
+        degrees = (orimult*45)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad46):
+        degrees = (orimult*46)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad47):
+        degrees = (orimult*47)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad48):
+        degrees = (orimult*48)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad49):
+        degrees = (orimult*49)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad50):
+        degrees = (orimult*50)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad51):
+        degrees = (orimult*51)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad52):
+        degrees = (orimult*52)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad53):
+        degrees = (orimult*53)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad54):
+        degrees = (orimult*54)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad55):
+        degrees = (orimult*55)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad56):
+        degrees = (orimult*56)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad57):
+        degrees = (orimult*57)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad58):
+        degrees = (orimult*58)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad59):
+        degrees = (orimult*59)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad60):
+        degrees = (orimult*60)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad61):
+        degrees = (orimult*61)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad62):
+        degrees = (orimult*62)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad63):
+        degrees = (orimult*63)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad64):
+        degrees = (orimult*64)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad65):
+        degrees = (orimult*65)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad66):
+        degrees = (orimult*66)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad67):
+        degrees = (orimult*67)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad68):
+        degrees = (orimult*68)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad69):
+        degrees = (orimult*69)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad70):
+        degrees = (orimult*70)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad71):
+        degrees = (orimult*71)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad72):
+        degrees = (orimult*72)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad73):
+        degrees = (orimult*73)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad74):
+        degrees = (orimult*74)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad75):
+        degrees = (orimult*75)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad76):
+        degrees = (orimult*76)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad77):
+        degrees = (orimult*77)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad78):
+        degrees = (orimult*78)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad79):
+        degrees = (orimult*79)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad80):
+        degrees = (orimult*80)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad81):
+        degrees = (orimult*81)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad82):
+        degrees = (orimult*82)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad83):
+        degrees = (orimult*83)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad84):
+        degrees = (orimult*84)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad85):
+        degrees = (orimult*85)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad86):
+        degrees = (orimult*86)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad87):
+        degrees = (orimult*87)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad88):
+        degrees = (orimult*88)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad89):
+        degrees = (orimult*89)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad90):
+        degrees = (orimult*90)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad91):
+        degrees = (orimult*91)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad92):
+        degrees = (orimult*92)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad93):
+        degrees = (orimult*93)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad94):
+        degrees = (orimult*94)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad95):
+        degrees = (orimult*95)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad96):
+        degrees = (orimult*96)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad97):
+        degrees = (orimult*97)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad98):
+        degrees = (orimult*98)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+    elif mouse2.isPressedIn(rad99):
+        degrees = (orimult*99)+(orimult/2)
+        Image2.setColor([degrees,1,1])#sets Image2 hsv color
+
+#MARK: Update Segment Positions And Draw Them
+if didFinishDrag == True: #This is to prevent slowness when picking up ubject to drag
+    segpos = (place)#When it appears sets the pos equal to the current place of the object
+    #Sets each segment position
+    rad0.setPos(segpos)
+    rad1.setPos(segpos)
+    rad2.setPos(segpos)
+    rad3.setPos(segpos)
+    rad4.setPos(segpos)
+    rad5.setPos(segpos)
+    rad6.setPos(segpos)
+    rad7.setPos(segpos)
+    rad8.setPos(segpos)
+    rad9.setPos(segpos)
+    rad10.setPos(segpos)
+    rad11.setPos(segpos)
+    rad12.setPos(segpos)
+    rad13.setPos(segpos)
+    rad14.setPos(segpos)
+    rad15.setPos(segpos)
+    rad16.setPos(segpos)
+    rad17.setPos(segpos)
+    rad18.setPos(segpos)
+    rad19.setPos(segpos)
+    rad20.setPos(segpos)
+    rad21.setPos(segpos)
+    rad22.setPos(segpos)
+    rad23.setPos(segpos)
+    rad24.setPos(segpos)
+    rad25.setPos(segpos)
+    rad26.setPos(segpos)
+    rad27.setPos(segpos)
+    rad28.setPos(segpos)
+    rad29.setPos(segpos)
+    rad30.setPos(segpos)
+    rad31.setPos(segpos)
+    rad32.setPos(segpos)
+    rad33.setPos(segpos)
+    rad34.setPos(segpos)
+    rad35.setPos(segpos)
+    rad36.setPos(segpos)
+    rad37.setPos(segpos)
+    rad38.setPos(segpos)
+    rad39.setPos(segpos)
+    rad40.setPos(segpos)
+    rad41.setPos(segpos)
+    rad42.setPos(segpos)
+    rad43.setPos(segpos)
+    rad44.setPos(segpos)
+    rad45.setPos(segpos)
+    rad46.setPos(segpos)
+    rad47.setPos(segpos)
+    rad48.setPos(segpos)
+    rad49.setPos(segpos)
+    rad50.setPos(segpos)
+    rad51.setPos(segpos)
+    rad52.setPos(segpos)
+    rad53.setPos(segpos)
+    rad54.setPos(segpos)
+    rad55.setPos(segpos)
+    rad56.setPos(segpos)
+    rad57.setPos(segpos)
+    rad58.setPos(segpos)
+    rad59.setPos(segpos)
+    rad60.setPos(segpos)
+    rad61.setPos(segpos)
+    rad62.setPos(segpos)
+    rad63.setPos(segpos)
+    rad64.setPos(segpos)
+    rad65.setPos(segpos)
+    rad66.setPos(segpos)
+    rad67.setPos(segpos)
+    rad68.setPos(segpos)
+    rad69.setPos(segpos)
+    rad70.setPos(segpos)
+    rad71.setPos(segpos)
+    rad72.setPos(segpos)
+    rad73.setPos(segpos)
+    rad74.setPos(segpos)
+    rad75.setPos(segpos)
+    rad76.setPos(segpos)
+    rad77.setPos(segpos)
+    rad78.setPos(segpos)
+    rad79.setPos(segpos)
+    rad80.setPos(segpos)
+    rad81.setPos(segpos)
+    rad82.setPos(segpos)
+    rad83.setPos(segpos)
+    rad84.setPos(segpos)
+    rad85.setPos(segpos)
+    rad86.setPos(segpos)
+    rad87.setPos(segpos)
+    rad88.setPos(segpos)
+    rad89.setPos(segpos)
+    rad90.setPos(segpos)
+    rad91.setPos(segpos)
+    rad92.setPos(segpos)
+    rad93.setPos(segpos)
+    rad94.setPos(segpos)
+    rad95.setPos(segpos)
+    rad96.setPos(segpos)
+    rad97.setPos(segpos)
+    rad98.setPos(segpos)
+    rad99.setPos(segpos)
+elif isDragging == False and isOnColor == True: #When dragging it will dispear
+    #Draws each segment
+    rad0.draw()
+    rad1.draw()
+    rad2.draw()
+    rad3.draw()
+    rad4.draw()
+    rad5.draw()
+    rad6.draw()
+    rad7.draw()
+    rad8.draw()
+    rad9.draw()
+    rad10.draw()
+    rad11.draw()
+    rad12.draw()
+    rad13.draw()
+    rad14.draw()
+    rad15.draw()
+    rad16.draw()
+    rad17.draw()
+    rad18.draw()
+    rad19.draw()
+    rad20.draw()
+    rad21.draw()
+    rad22.draw()
+    rad23.draw()
+    rad24.draw()
+    rad25.draw()
+    rad26.draw()
+    rad27.draw()
+    rad28.draw()
+    rad29.draw()
+    rad30.draw()
+    rad31.draw()
+    rad32.draw()
+    rad33.draw()
+    rad34.draw()
+    rad35.draw()
+    rad36.draw()
+    rad37.draw()
+    rad38.draw()
+    rad39.draw()
+    rad40.draw()
+    rad41.draw()
+    rad42.draw()
+    rad43.draw()
+    rad44.draw()
+    rad45.draw()
+    rad46.draw()
+    rad47.draw()
+    rad48.draw()
+    rad49.draw()
+    rad50.draw()
+    rad51.draw()
+    rad52.draw()
+    rad53.draw()
+    rad54.draw()
+    rad55.draw()
+    rad56.draw()
+    rad57.draw()
+    rad58.draw()
+    rad59.draw()
+    rad60.draw()
+    rad61.draw()
+    rad62.draw()
+    rad63.draw()
+    rad64.draw()
+    rad65.draw()
+    rad66.draw()
+    rad67.draw()
+    rad68.draw()
+    rad69.draw()
+    rad70.draw()
+    rad71.draw()
+    rad72.draw()
+    rad73.draw()
+    rad74.draw()
+    rad75.draw()
+    rad76.draw()
+    rad77.draw()
+    rad78.draw()
+    rad79.draw()
+    rad80.draw()
+    rad81.draw()
+    rad82.draw()
+    rad83.draw()
+    rad84.draw()
+    rad85.draw()
+    rad86.draw()
+    rad87.draw()
+    rad88.draw()
+    rad89.draw()
+    rad90.draw()
+    rad91.draw()
+    rad92.draw()
+    rad93.draw()
+    rad94.draw()
+    rad95.draw()
+    rad96.draw()
+    rad97.draw()
+    rad98.draw()
+    rad99.draw()
